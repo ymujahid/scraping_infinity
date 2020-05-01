@@ -4,10 +4,6 @@ import pprint
 from time import time
 
 
-def my_decorator():
-    pass
-
-
 def check_keyword(page=1):
     url = r'https://lbc.cryptoguru.org/dio/' + str(page)
     res = requests.get(url)
@@ -25,14 +21,14 @@ def check_keyword(page=1):
 
 
 t1 = time()
-# for p in range(944, 10000):
-#     answer = check_keyword(p)
-#     if answer:
-#         print('this is it!')
-#     print(f'page {p} checked!')
-p = 65432178905682168979216398732907210382036897238023
-print(check_keyword(p))
-print(f'page {p} checked!')
+# pp = 904625697166532776746648320380374280100293470930272690489102837043110636675
+pp = 100
+for p in range(1, pp):
+    answer = check_keyword(p)
+    if answer:
+        print('this is it!')
+        break
+    print(f'page {p} checked!')
 t2 = time()
 
 print(f'it took it {t2 - t1} seconds')
